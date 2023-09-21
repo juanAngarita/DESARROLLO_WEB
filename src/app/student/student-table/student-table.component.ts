@@ -8,6 +8,8 @@ import { Student } from '../student';
 })
 export class StudentTableComponent {
 
+  mostrarForm: boolean = false;
+
   //atributos
   selectedStudent!: Student;
 
@@ -63,6 +65,19 @@ export class StudentTableComponent {
   //este metodo se llama cuando se emite un evento desde el hijo.
   agregarEstudiante(student: Student){
       this.studentList.push(student);
+  }
+
+  eliminarEstudiante(student: Student){
+    var index = this.studentList.indexOf(student);
+    this.studentList.splice(index, 1);
+  }
+
+  mostrarFormulario(){
+    this.mostrarForm = true;
+  }
+
+  ocultarFormulario(mostrar: boolean){
+    this.mostrarForm = false;    
   }
 
 }

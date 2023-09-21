@@ -1,0 +1,40 @@
+header{
+    background-color: #2C5697;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+}
+
+#name{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+button{
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: larger;
+}
+
+button:hover {
+    text-decoration: underline; /* Agrega un subrayado al hacer hover */
+}
+
+#content{
+    margin: 0px 30px;
+    margin-top: 10px;
+}

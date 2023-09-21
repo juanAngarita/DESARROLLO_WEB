@@ -1,3 +1,4 @@
+<h4>FORMULARIO</h4>
 <!--Crearemos el formulario de dos maneras distintas-->
 <!--El #permite referenciar un objeto del html-->
 <form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
@@ -24,7 +25,8 @@
     <input type="phone" id="phone" name="phone" [(ngModel)]="formStudent.phone">
     <br>
     <!--button type="submit" (click)="addStudentForm()">Agregar usuario</button-->
-    <button type="submit" [disabled]="!studentForm.form.valid">Agregar usuario</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!studentForm.form.valid">AGREGAR</button>
+    <button class="btn btn-danger" (click)="cancelar()">CANCELAR</button>
 </form>
 {{formStudent.name}}
 {{studentForm.form.valid }}

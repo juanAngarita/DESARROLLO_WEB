@@ -12,6 +12,9 @@ export class StudentFormComponent {
   @Output()
   addStudentEvent = new EventEmitter<Student>();
 
+  @Output()
+  ocultarFormularioEvent = new EventEmitter<boolean>();
+
   sendStudent!: Student;
 
   //modelo
@@ -37,10 +40,14 @@ export class StudentFormComponent {
 
     //agregar un estudiante a partir del formulario
   addStudent(form:any){
-      console.log(this.formStudent);
       //para copiar los valores
       this.sendStudent = Object.assign({}, this.formStudent);
   
       this.addStudentEvent.emit(this.sendStudent);
+  }
+
+
+  cancelar(){
+    this.ocultarFormularioEvent.emit(false);
   }
 }

@@ -1,6 +1,12 @@
-<h1>{{title}}</h1>
+<header>
+  <div id="name">
+    <img src="assets/img/logoPUJ.png" alt="LOGO PUJ" id="logo" />
+    <h1>{{ title }}</h1>
+  </div>
+
+
   <!--El switch case muestra ciertas etiquetas dependiendo del valor del atributo-->
-  <ng-container [ngSwitch]="userType">
+  <div [ngSwitch]="userType">
     <ng-container *ngSwitchCase="'user'">
       <button>Acciones basicas</button>
     </ng-container>
@@ -12,7 +18,8 @@
       <button>Acciones Profesor</button>
       <button>Acciones Administrador</button>
     </ng-container>
-  </ng-container>
-
-
-<app-student-table></app-student-table>
+  </div>
+</header>
+<div id="content">
+  <app-student-table></app-student-table>
+</div>
