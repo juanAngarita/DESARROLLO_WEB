@@ -1,5 +1,6 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+/*Cambia el color del texto de acuerdo a la ppa*/
 .high-ppa{
     color: green;
 }
