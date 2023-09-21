@@ -1,0 +1,46 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Student } from '../student';
+
+@Component({
+  selector: 'app-student-form',
+  templateUrl: './student-form.component.html',
+  styleUrls: ['./student-form.component.css'],
+})
+export class StudentFormComponent {
+  
+//queremos que el estudiante se transmita al componente padre a traves de un evento
+  @Output()
+  addStudentEvent = new EventEmitter<Student>();
+
+  sendStudent!: Student;
+
+  //modelo
+  formStudent: Student = {
+    name: '',
+    lastName: '',
+    age: 0,
+    email: '',
+    phone: '',
+    ppa: 3.0,
+    activated: true,
+    fechaPago: new Date(),
+  };
+
+  //agregar un estudiante a partir del formulario
+  addStudentForm() {
+    console.log(this.formStudent);
+    //para copiar los valores
+    this.sendStudent = Object.assign({}, this.formStudent);
+
+    this.addStudentEvent.emit(this.sendStudent);
+  }
+
+    //agregar un estudiante a partir del formulario
+  addStudent(form:any){
+      console.log(this.formStudent);
+      //para copiar los valores
+      this.sendStudent = Object.assign({}, this.formStudent);
+  
+      this.addStudentEvent.emit(this.sendStudent);
+  }
+}

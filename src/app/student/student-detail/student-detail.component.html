@@ -1,0 +1,20 @@
+<div>
+  <h4>Student detail component</h4>
+  <!--Si el estudiante existe muestro sus datos-->
+  <ng-container *ngIf="student">
+    <ul>
+      <li>Nombre: {{ student.name }}</li>
+      <li>Apellidos: {{ student.lastName }}</li>
+      <li>Edad: {{ student.age }}</li>
+      <li>Corrro: {{ student.email }}</li>
+      <li>Telefono: {{ student.phone }}</li>
+      <li>Promedio: {{ student.ppa }}</li>
+      <li *ngIf="student.address">Address: {{ student.address }}</li>
+      <li>Activo: {{ student.activated }}</li>
+    </ul>
+  </ng-container>
+  <!--Si el estudiante NO existe muestro un mensaje-->
+  <ng-container *ngIf="!student">
+    <p>Seleccione un estudiante de la tabla</p>
+  </ng-container>
+</div>

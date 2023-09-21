@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto';
+  //modelo y controlador
+
+  title = 'Student app';
+
+  userType='admin'
 }
